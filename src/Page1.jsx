@@ -1,8 +1,10 @@
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 export const Page1 = () => {
   const arr = [...Array(100).keys()];
   console.log(arr);
+  const history = useHistory();
+  const onClickDetailA = () => history.push("/page1/detailA");
   return (
     <div>
       <h1>Page1です。</h1>
@@ -10,6 +12,7 @@ export const Page1 = () => {
       <br />
       <Link to="/page1/detailB">Page1DetailB</Link>
       <br />
+      <button onClick={onClickDetailA}>DetailA</button>
     </div>
   );
 };

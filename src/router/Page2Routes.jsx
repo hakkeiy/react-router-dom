@@ -1,4 +1,5 @@
 import { Page2 } from "../Page2";
+import { Page404 } from "../Page404";
 import { URLParameter } from "../URLParameter";
 
 export const Page2Route = [
@@ -11,5 +12,10 @@ export const Page2Route = [
     path: "/:id",
     exact: true,
     children: <URLParameter />
+  },
+  {
+    path: "/*",
+    exact: false,
+    children: <Page404 />
   }
 ];
